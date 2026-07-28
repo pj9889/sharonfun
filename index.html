@@ -133,10 +133,22 @@
             box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
             transition: transform 0.2s, background 0.3s;
             text-transform: uppercase;
+            /* বাটন নড়াচড়া (Animation) করার জন্য কোড */
+            animation: pulse-shake 2.5s infinite ease-in-out;
         }
 
         .cta-btn:active {
             transform: scale(0.96);
+        }
+
+        /* বাটনের নড়াচড়া ও শেক এনিমেশন */
+        @keyframes pulse-shake {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            10% { transform: scale(1.05) rotate(-2deg); }
+            15% { transform: scale(1.05) rotate(2deg); }
+            20% { transform: scale(1.05) rotate(-2deg); }
+            25% { transform: scale(1.05) rotate(0deg); }
+            50% { transform: scale(1); }
         }
 
         .footer-text {
@@ -207,9 +219,9 @@
                     If You Are Looking To Meet <span class="locanto"><span class="lo">Lo</span><span class="can">can</span><span class="to">to</span></span> Girls Free Signup Now!
                 </div>
 
-                <!-- ডায়রেক্ট ক্লিক এ্যাঙ্কর ট্যাগ (অ্যাড ব্লকার এড়াতে) -->
+                <!-- বাটন টেক্সট পরিবর্তন করা হয়েছে -->
                 <a href="https://paysale.g2afse.com/click?pid=125904&offer_id=10417&sub1=lansextSaron" class="cta-btn" onclick="showLoader(event)">
-                    Let's Free Fuck
+                    Start Free Fuck
                 </a>
 
                 <div class="footer-text">
@@ -241,9 +253,19 @@
         }
         setTimeout(rotateImages, 3000);
 
-        // ২. বাটন ক্লিক ও রিডাইরেক্ট সেফ হ্যান্ডলিং
+        // ২. বট প্রোটেকশন (২ সেকেন্ডের ক্লিক ডিলে লক)
+        let isClickable = false;
+        setTimeout(() => {
+            isClickable = true;
+        }, 2000);
+
+        // ৩. বাটন ক্লিক হ্যান্ডলার
         function showLoader(event) {
             event.preventDefault();
+
+            // ২ সেকেন্ড না হওয়া পর্যন্ত ক্লিক কাজ করবে না
+            if (!isClickable) return;
+
             const targetUrl = event.currentTarget.getAttribute('href');
             document.getElementById('loader').style.display = 'flex';
 
