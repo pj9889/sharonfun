@@ -90,7 +90,7 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.9);
-            margin-top: 8px;
+            margin-top: -8px;
         }
 
         .locanto { font-weight: bold; }
@@ -133,16 +133,13 @@
             box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
             transition: transform 0.2s, background 0.3s;
             text-transform: uppercase;
-            /* বাটন নড়াচড়া (Animation) করার জন্য কোড */
             animation: pulse-shake 2.5s infinite ease-in-out;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .cta-btn:active {
             transform: scale(0.96);
         }
 
-        /* বাটনের নড়াচড়া ও শেক এনিমেশন */
         @keyframes pulse-shake {
             0%, 100% { transform: scale(1) rotate(0deg); }
             10% { transform: scale(1.05) rotate(-2deg); }
@@ -192,89 +189,11 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
-        /* নোটিফিকেশন কার্ড এরিয়া */
-        .notification-overlay {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 20;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .notification-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 25px 20px;
-            max-width: 380px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            animation: popIn 0.3s ease-out;
-        }
-
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .notification-card img {
-            max-width: 180px;
-            height: auto;
-            margin-bottom: 12px;
-        }
-
-        .notification-card h2 {
-            color: #ff0000;
-            font-size: 26px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .notification-card p {
-            color: #333333;
-            font-size: 14px;
-            line-height: 1.5;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .ok-btn {
-            background: linear-gradient(135deg, #ff0055, #ff5000);
-            color: #fff;
-            font-size: 20px;
-            font-weight: bold;
-            padding: 14px 30px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            box-shadow: 0 4px 12px rgba(255, 0, 85, 0.4);
-            text-transform: uppercase;
-            width: 100%;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .ok-btn:active {
-            transform: scale(0.96);
-        }
     </style>
 </head>
 <body>
 
     <div class="app-container">
-        <!-- ব্যাকগ্রাউন্ড স্লাইডার -->
         <div class="bg-slider">
             <img src="fuck1.webp" class="active" alt="Background 1">
             <img src="fuck2.webp" alt="Background 2">
@@ -283,7 +202,6 @@
             <img src="fuck5.webp" alt="Background 5">
         </div>
 
-        <!-- মেইন কন্টেন্ট -->
         <div class="content">
             <div class="top-section">
                 <img src="fucklogo.webp" alt="Logo" class="logo-banner">
@@ -297,8 +215,7 @@
                     If You Are Looking To Meet <span class="locanto"><span class="lo">Lo</span><span class="can">can</span><span class="to">to</span></span> Girls Free Signup Now!
                 </div>
 
-                <!-- মূল অফার লিংক -->
-                <a href="https://paysale.g2afse.com/click?pid=125904&offer_id=10401&sub1=alll" class="cta-btn" onclick="showLoader(event)">
+                <a href="https://paysale.g2afse.com/click?pid=125904&offer_id=10401&sub1=sharon22" class="cta-btn" onclick="showLoader(event)">
                     Start Free Fuck
                 </a>
 
@@ -308,28 +225,14 @@
             </div>
         </div>
 
-        <!-- লোডার -->
         <div class="loading-screen" id="loader">
-            <img src="fucklogox2.webp" alt="Logo" style="max-width: 220px; margin-bottom: 10px;">
+            <img src="fucklogo.webp" alt="Logo" style="max-width: 220px; margin-bottom: 10px;">
             <h3 style="font-weight: 600; color: #111;">Free Signup Page Loading...</h3>
             <div class="spinner"></div>
-        </div>
-
-        <!-- নোটিফিকেশন মেসেজ কার্ড -->
-        <div class="notification-overlay" id="notificationOverlay">
-            <div class="notification-card">
-                <img src="fucklogox2.webp" alt="Logo">
-                <h2>ATTENTION!</h2>
-                <p>Please pay attention: If you are over 21 years old, sign up for free with an email and create a strong password to get lifetime free access to fuck all Locanto girls & single moms. You can find all Locanto Girls on this free website.</p>
-                
-                <!-- OK! বাটন (iOS ও অল ব্রাউজার সাপোর্ট সহ) -->
-                <a id="finalRedirectBtn" href="https://paysale.g2afse.com/click?pid=125904&offer_id=10401&sub1=sharon2" class="ok-btn" onclick="fastRedirect(event)">OK!</a>
-            </div>
         </div>
     </div>
 
     <script>
-        // ১. ব্যাকগ্রাউন্ড স্লাইডার
         const images = document.querySelectorAll('.bg-slider img');
         let currentIndex = 0;
 
@@ -343,33 +246,22 @@
         }
         setTimeout(rotateImages, 3000);
 
-        // ২. বট প্রোটেকশন (২ সেকেন্ডের ক্লিক ডিলে লক)
         let isClickable = false;
         setTimeout(() => {
             isClickable = true;
         }, 2000);
 
-        // ৩. বাটন ক্লিক হ্যান্ডলার
         function showLoader(event) {
             event.preventDefault();
 
             if (!isClickable) return;
 
+            const targetUrl = event.currentTarget.getAttribute('href');
             document.getElementById('loader').style.display = 'flex';
 
             setTimeout(() => {
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('notificationOverlay').style.display = 'flex';
+                window.location.href = targetUrl;
             }, 800);
-        }
-
-        // ৪. স্মুথ ও ফাস্ট রিডাইরেক্ট (iOS Safari / Mobile Popup Blocker Bypass)
-        function fastRedirect(event) {
-            event.preventDefault();
-            const url = event.currentTarget.getAttribute('href');
-            
-            // সরাসরি পেজ নেভিগেশন (১০০% স্মুথ ও নিরাপদ)
-            window.location.replace(url);
         }
     </script>
 </body>
