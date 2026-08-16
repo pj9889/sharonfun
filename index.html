@@ -137,7 +137,7 @@
         /* Clicked State (Opposite Color + Loading) */
         .cta-btn.btn-loading {
             animation: none !important;
-            background: linear-gradient(135deg, #4b0082, #00d2ff);
+            background: linear-gradient(135deg, #4b0082, #00d2ff); /* Contrast Opposite Gradient */
             box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
             font-size: 15px;
             text-transform: none;
@@ -179,72 +179,6 @@
             margin-top: 15px;
             text-shadow: 0 1px 3px rgba(0,0,0,0.9);
         }
-
-        /* --- Telegram Notification Popup Style --- */
-        .tg-notification {
-            position: absolute;
-            top: 40%;
-            right: -320px; /* Hidden initially on the right */
-            z-index: 100;
-            background: rgba(23, 33, 43, 0.92); /* Telegram Dark Theme Color */
-            border: 1px solid rgba(0, 136, 204, 0.5);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            padding: 10px 14px;
-            border-radius: 25px 8px 8px 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 136, 204, 0.3);
-            text-decoration: none;
-            transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.27);
-            max-width: 280px;
-        }
-
-        .tg-notification.show {
-            right: 12px; /* Slide in to the right edge */
-        }
-
-        .tg-icon-box {
-            width: 38px;
-            height: 38px;
-            background: #0088cc;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-            box-shadow: 0 2px 6px rgba(0,136,204,0.5);
-        }
-
-        .tg-icon-box svg {
-            width: 20px;
-            height: 20px;
-            fill: #ffffff;
-            margin-right: 2px; /* Visual balance for Telegram logo */
-        }
-
-        .tg-text-container {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .tg-title {
-            font-size: 11px;
-            color: #0088cc;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .tg-message {
-            font-size: 13px;
-            color: #ffffff;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-top: 2px;
-        }
     </style>
 </head>
 <body>
@@ -258,19 +192,6 @@
             <img src="fuck5.webp" alt="Background 5">
         </div>
 
-        <!-- Telegram Notification Slide In -->
-        <a href="https://t.me/Ninakw247" target="_blank" class="tg-notification" id="tgNotice">
-            <div class="tg-icon-box">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.05-.48-.82-.27-1.47-.42-1.42-.88.03-.24.38-.49 1.05-.75 4.12-1.8 6.87-2.98 8.25-3.56 3.93-1.63 4.75-1.92 5.28-1.93.11 0 .37.03.54.17.14.12.18.28.2.4.01.07.02.21 0 .33z"/>
-                </svg>
-            </div>
-            <div class="tg-text-container">
-                <span class="tg-title">Telegram Message</span>
-                <span class="tg-message">Chat Locanto Girl on telegram</span>
-            </div>
-        </a>
-
         <div class="content">
             <div class="top-section">
                 <!-- Top Header Text/Logo completely removed -->
@@ -281,7 +202,7 @@
                     If You Are Looking To Meet <span class="locanto"><span class="lo">Lo</span><span class="can">can</span><span class="to">to</span></span> Girls Free Signup Now!
                 </div>
 
-                <a href="https://c4tpbrw.balancedhonesty.org/wccm5xm?s1=ssssss22&cid=sss22" class="cta-btn" id="ctaButton" onclick="handleButtonClick(event)">
+                <a href="https://c4tpbrw.balancedhonesty.org/wccm5xm?s1=ssssss&cid=sss" class="cta-btn" id="ctaButton" onclick="handleButtonClick(event)">
                     <span class="btn-spinner"></span>
                     <span class="btn-text">Start Free Fuck</span>
                 </a>
@@ -313,14 +234,6 @@
         setTimeout(() => {
             isClickable = true;
         }, 2000);
-
-        // Show Telegram Notification after 3 seconds
-        setTimeout(() => {
-            const tgNotice = document.getElementById('tgNotice');
-            if (tgNotice) {
-                tgNotice.classList.add('show');
-            }
-        }, 3000);
 
         // Button Click Handler
         function handleButtonClick(event) {
