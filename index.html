@@ -155,37 +155,8 @@
             animation: btn-spin 0.8s linear infinite;
         }
 
-        /* New: Sound Wave Animation for Voice Playing */
-        .sound-wave {
-            display: none;
-            align-items: center;
-            gap: 3px;
-            height: 20px;
-        }
-
-        .sound-wave .bar {
-            width: 4px;
-            background-color: #fff;
-            border-radius: 2px;
-            animation: sound-bounce 1s infinite ease-in-out;
-        }
-
-        .sound-wave .bar:nth-child(1) { height: 10px; animation-delay: 0s; }
-        .sound-wave .bar:nth-child(2) { height: 20px; animation-delay: 0.2s; }
-        .sound-wave .bar:nth-child(3) { height: 15px; animation-delay: 0.4s; }
-        .sound-wave .bar:nth-child(4) { height: 8px; animation-delay: 0.6s; }
-
         .cta-btn.btn-loading .btn-spinner {
-            display: none; /* Hide spinner when playing audio */
-        }
-        
-        .cta-btn.btn-loading .sound-wave {
-            display: flex; /* Show sound wave instead */
-        }
-
-        @keyframes sound-bounce {
-            0%, 100% { transform: scaleY(0.5); }
-            50% { transform: scaleY(1); }
+            display: inline-block;
         }
 
         @keyframes btn-spin {
@@ -212,9 +183,6 @@
 </head>
 <body>
 
-    <!-- Hidden Audio Player -->
-    <audio id="voiceAudio" src="rx4.mp3" preload="auto"></audio>
-
     <div class="app-container">
         <div class="bg-slider">
             <img src="fuck1.webp" class="active" alt="Background 1">
@@ -234,13 +202,7 @@
                     If You Are Looking To Meet <span class="locanto"><span class="lo">Lo</span><span class="can">can</span><span class="to">to</span></span> Girls Free Signup Now!
                 </div>
 
-                <a href="https://c4tpbrw.balancedhonesty.org/wccm5xm?s1=ssddddd&cid=ssddddd" class="cta-btn" id="ctaButton" onclick="handleButtonClick(event)">
-                    <span class="sound-wave">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </span>
+                <a href="https://c4tpbrw.balancedhonesty.org/wccm5xm?s1=sssss&cid=ssssss" class="cta-btn" id="ctaButton" onclick="handleButtonClick(event)">
                     <span class="btn-spinner"></span>
                     <span class="btn-text">Start Free Fuck</span>
                 </a>
@@ -273,9 +235,7 @@
             isClickable = true;
         }, 2000);
 
-        // Button Click & Audio Handler
-        const voiceAudio = document.getElementById('voiceAudio');
-
+        // Button Click Handler
         function handleButtonClick(event) {
             event.preventDefault();
 
@@ -285,29 +245,14 @@
             const buttonText = button.querySelector('.btn-text');
             const targetUrl = button.getAttribute('href');
 
-            // Prevent multiple clicks
-            if (button.classList.contains('btn-loading')) return;
-
-            // Apply Voice Playing State
+            // Apply Opposite Color & Loading State
             button.classList.add('btn-loading');
-            buttonText.textContent = 'Playing Voice.....';
+            buttonText.textContent = 'Free Signup page Loading...';
 
-            // Play the audio
-            let playPromise = voiceAudio.play();
-
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    // Browser blocked auto-play or file missing - fallback to redirect immediately
-                    console.log("Audio play blocked or missing:", error);
-                    window.location.href = targetUrl;
-                });
-            }
-
-            // Redirect exactly when the audio finishes
-            voiceAudio.onended = function() {
-                buttonText.textContent = 'Opening Link...';
+            // Wait 1.5 Seconds then Redirect
+            setTimeout(() => {
                 window.location.href = targetUrl;
-            };
+            }, 1500);
         }
     </script>
 </body>
